@@ -1,7 +1,10 @@
+import '../styles/fonts.css'
 import { Fragment } from 'react'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import GlobalStyles from '../styles/GlobalStyles'
+import { ThemeProvider } from 'styled-components'
+import theme from '../styles/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,8 +14,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="Gabriel Ribeiro personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </Fragment>
   )
 }
