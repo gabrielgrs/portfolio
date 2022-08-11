@@ -1,5 +1,4 @@
 import * as S from './styles'
-import type * as T from './types'
 import projects from './projects'
 import ProjectCard from './ProjectCard'
 import SectionContent from '../shared/SectionContent'
