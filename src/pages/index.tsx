@@ -5,6 +5,7 @@ import Main from '../components/Main'
 import About from '../components/About'
 import Work from '../components/Work'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       <About />
       <Work />
       <Contact />
+      <Footer />
     </Fragment>
   )
 }
