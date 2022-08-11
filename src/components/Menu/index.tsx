@@ -25,6 +25,7 @@ const Nav = () => {
         <S.Item href="#main">main</S.Item>
         <S.Item href="#about">about</S.Item>
         <S.Item href="#work">work</S.Item>
+        <S.Item href="#contact">contact</S.Item>
       </S.Section>
     </S.Nav>
   )
