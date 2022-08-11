@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import * as S from './styles'
 
-const Menu = () => {
+const Nav = () => {
   const [isFarFromTop, setIsFarFromTop] = useState(false)
 
   useEffect(() => {
@@ -22,10 +22,11 @@ const Menu = () => {
         width="32px"
       />
       <S.Section>
-        <S.Item href="#item1">item 1</S.Item>
+        <S.Item href="#main">main</S.Item>
+        <S.Item href="#about">about</S.Item>
       </S.Section>
     </S.Nav>
   )
 }
 
-export default Menu
+export default Nav
