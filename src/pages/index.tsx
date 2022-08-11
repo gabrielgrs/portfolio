@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Input, Menu, Textarea } from '../components'
+import { FadeWhenVisible, Menu } from '../components'
 import Container from '../components/Container'
 import Main from '../components/Main'
 import About from '../components/About'
@@ -11,10 +11,18 @@ const Home: NextPage = () => {
   return (
     <Container>
       <Menu />
-      <Main />
-      <About />
-      <Work />
-      <Contact />
+      <FadeWhenVisible>
+        <Main />
+      </FadeWhenVisible>
+      <FadeWhenVisible>
+        <About />
+      </FadeWhenVisible>
+      <FadeWhenVisible>
+        <Work />
+      </FadeWhenVisible>
+      <FadeWhenVisible>
+        <Contact />
+      </FadeWhenVisible>
       <Footer />
     </Container>
   )
