@@ -8,8 +8,7 @@ const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     font-family: ${({ theme }) => theme.fonts.primary};
     background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.white};
-}
+  }
 
   a {
     color: inherit;
@@ -18,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
 
   *  {
     box-sizing: border-box;
+    color: ${({ theme }) => theme.colors.white};
   }
 `
 
