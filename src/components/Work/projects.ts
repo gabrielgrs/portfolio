@@ -1,3 +1,5 @@
+import * as T from './types'
+
 const projects: T.Project[] = [
   {
     name: 'Portfolio',
