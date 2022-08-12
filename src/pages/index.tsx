@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import type { GithubUser, GithubRepo } from '../types/shared'
 import { FadeWhenVisible, Menu } from '../components'
 import Container from '../components/Container'
@@ -7,6 +7,7 @@ import About from '../components/About'
 import Work from '../components/Work'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import SocialLinks from '../components/SocialLinks'
 
 type Props = {
   login: string
@@ -17,16 +18,25 @@ type Props = {
   avatar_url: string
   job: string
   email: string
+  githubUrl: string
+  linkedinUrl: string
+  instagramUrl: string
   totalRepos: number
   technologies: string[]
   totalSize: number
   reposLanguages: string[]
 }
 
-const Home: NextPage<Props> = (props) => {
+const Home = (props: Props) => {
   return (
     <Container>
       <Menu />
+      <SocialLinks
+        email={props.email}
+        githubUrl={props.githubUrl}
+        linkedinUrl={props.linkedinUrl}
+        instagramUrl={props.instagramUrl}
+      />
       <FadeWhenVisible>
         <Main githubUsername={props.login} name={props.name} job={props.job} bio={props.bio} />
       </FadeWhenVisible>
@@ -86,6 +96,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
       avatar_url,
       job: 'Software Engineer',
       email: 'grxgabriel@gmail.com',
+      githubUrl: 'https://github.com/gabrielgrs',
+      linkedinUrl: 'https://www.linkedin.com/in/gabrielgrs',
+      instagramUrl: 'https://instagram.com/_heygabu',
       technologies: ['JavaScript', 'TypeScript', 'React', ' Next.js', 'GraphQL'],
       totalRepos: reposData.length,
       totalSize,
