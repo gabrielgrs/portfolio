@@ -10,9 +10,7 @@ const ProjectCard = (props: T.Props) => {
         <h3>{props.name}</h3>
         <S.ProjectDescription>{props.description}</S.ProjectDescription>
       </div>
-      <S.ProjectTechnologies>
-        {props.technologies.join(', ')}
-      </S.ProjectTechnologies>
+      <S.ProjectTechnologies>{props.technologies.join(', ')}</S.ProjectTechnologies>
       <S.ProjectLinks>
         {props.githubUrl && (
           <a href={props.githubUrl} target="_blank" rel="noreferrer">

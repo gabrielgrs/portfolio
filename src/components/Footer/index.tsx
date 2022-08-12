@@ -1,6 +1,7 @@
 import * as S from './styles'
+import type * as T from './types'
 
-const Footer = () => {
+const Footer = ({ githubUrl, githuUsername }: T.Props) => {
   return (
     <S.Footer>
       <S.BuyMeACoffeContainer>
@@ -15,8 +16,8 @@ const Footer = () => {
       <br />
       <br />
       Made with love by{' '}
-      <a href="https://github.com/gabrielgrs" target="_blank" rel="noreferrer">
-        @gabrielgrs
+      <a href={githubUrl} target="_blank" rel="noreferrer">
+        @{githuUsername}
       </a>
     </S.Footer>
   )

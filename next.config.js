@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    GITHUB_USER: process.env.GITHUB_USER,
+  },
 }
 
 module.exports = nextConfig

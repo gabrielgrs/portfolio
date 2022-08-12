@@ -7,8 +7,8 @@ export const Main = styled.div`
   position: relative;
 `
 
-export const MainName = styled.h1`
-  ${({ theme }) => css`
+export const MainName = styled.h1<{ name: string; githubUsername: string }>`
+  ${({ theme, name, githubUsername }) => css`
     font-size: 3em;
     position: relative;
     height: 70px;
@@ -22,13 +22,13 @@ export const MainName = styled.h1`
 
     &:before {
       color: ${theme.colors.secondary};
-      content: 'Gabriel Ribeiro';
+      content: '${name}';
       position: absolute;
     }
 
     &:after {
       color: ${theme.colors.secondary};
-      content: '@gabrielgrs';
+      content: '@${githubUsername}';
       position: absolute;
       transform: translateX(-100vw);
       opacity: 0;
