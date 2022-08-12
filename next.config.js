@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   env: {
     GITHUB_USER: process.env.GITHUB_USER,
+    FORM_SUBMIT_ID: process.env.FORM_SUBMIT_ID,
   },
 }
 
