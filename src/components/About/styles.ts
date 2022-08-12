@@ -22,8 +22,13 @@ export const AboutDescription = styled.p`
 
 export const AboutTechnologies = styled.span`
   font-size: 0.9em;
-  padding-top: 8px;
   opacity: 0.9;
+`
+
+export const GithubInformations = styled.span`
+  /* font-size: 0.9em; */
+  padding: 0 16px;
+  /* opacity: 0.9; */
 `
 
 export const Avatar = styled.img`
@@ -31,9 +36,8 @@ export const Avatar = styled.img`
     width: 50%;
     border-radius: 24px 0 24px 0;
     position: relative;
-    box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff,
-      0 0 1rem ${theme.colors.secondary}, 0 0 0.5rem ${theme.colors.secondary},
-      0 0 0.1rem ${theme.colors.secondary},
+    box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 1rem ${theme.colors.secondary},
+      0 0 0.5rem ${theme.colors.secondary}, 0 0 0.1rem ${theme.colors.secondary},
       inset 0 0 0.7rem ${theme.colors.secondary};
 
     justify-self: center;

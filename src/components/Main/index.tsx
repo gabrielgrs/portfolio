@@ -2,23 +2,20 @@ import { BsChevronDown } from 'react-icons/bs'
 import Button from '../Button'
 import SectionContent from '../shared/SectionContent'
 import * as S from './styles'
+import type * as T from './types'
 
-const Main = () => {
+const Main = ({ name, githubUsername, job, bio }: T.Props) => {
   return (
     <S.Main id="main">
       <SectionContent>
         <S.GlowImage src="https://nextui.org/stitches-gradient.svg" />
         <span>Hello! I am,</span>
-        <S.MainName>{/* Name is before and after */}</S.MainName>
-        <S.MainJob>Software Engineer</S.MainJob>
+        <S.MainName name={name} githubUsername={githubUsername}>
+          {/* Name is before and after */}
+        </S.MainName>
+        <S.MainJob>{job}</S.MainJob>
         <br />
-        <S.MainDescription>
-          Technologies, innovation, entrepreneurship and Front-end Engineer! ~{' '}
-          <br />
-          <span role="img" aria-label="hand and heart emojis">
-            👋💜
-          </span>
-        </S.MainDescription>
+        <S.MainDescription>{bio}</S.MainDescription>
         <br />
         <br />
         <a href="#contact">
