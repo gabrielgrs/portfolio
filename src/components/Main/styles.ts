@@ -7,56 +7,18 @@ export const Main = styled.div`
   position: relative;
 `
 
-export const MainName = styled.h1<{ name: string; githubUsername: string }>`
-  ${({ theme, name, githubUsername }) => css`
+export const Hello = styled.span`
+  font-size: 1.1em;
+  font-weight: 600;
+`
+
+export const MainName = styled.h1`
+  ${({ theme }) => css`
     font-size: 3em;
     position: relative;
-    height: 70px;
     white-space: nowrap;
-
-    *,
-    &:before,
-    &:after {
-      transition: all 600ms ease-in-out;
-    }
-
-    &:before {
-      color: ${theme.colors.secondary};
-      content: '${name}';
-      position: absolute;
-    }
-
-    &:after {
-      color: ${theme.colors.secondary};
-      content: '@${githubUsername}';
-      position: absolute;
-      transform: translateX(-100vw);
-      opacity: 0;
-    }
-
-    &:hover {
-      &:before {
-        transform: translateX(-100vw);
-        opacity: 0;
-      }
-
-      &:after {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    &:not(:hover) {
-      &:before {
-        transform: translateX(0);
-        opacity: 1;
-      }
-
-      &:after {
-        transform: translateX(-100vh);
-        opacity: 0;
-      }
-    }
+    color: ${theme.colors.secondary};
+    width: max-content;
 
     ${theme.breakPoints.mobile} {
       font-size: 2.2em;

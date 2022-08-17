@@ -4,15 +4,13 @@ import SectionContent from '../shared/SectionContent'
 import * as S from './styles'
 import type * as T from './types'
 
-const Main = ({ name, githubUsername, job, bio }: T.Props) => {
+const Main = ({ name, job, bio }: T.Props) => {
   return (
     <S.Main id="main">
       <SectionContent>
         <S.GlowImage src="https://nextui.org/stitches-gradient.svg" />
-        <span>Hello! I am,</span>
-        <S.MainName name={name} githubUsername={githubUsername}>
-          {/* Name is before and after */}
-        </S.MainName>
+        <S.Hello>Hello! I am,</S.Hello>
+        <S.MainName>{name}</S.MainName>
         <S.MainJob>{job}</S.MainJob>
         <br />
         <S.MainDescription>{bio}</S.MainDescription>

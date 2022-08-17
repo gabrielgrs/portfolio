@@ -37,9 +37,7 @@ const Home = (props: Props) => {
         linkedinUrl={props.linkedinUrl}
         instagramUrl={props.instagramUrl}
       />
-      <FadeWhenVisible>
-        <Main githubUsername={props.login} name={props.name} job={props.job} bio={props.bio} />
-      </FadeWhenVisible>
+      <Main name={props.name} job={props.job} bio={props.bio} />
       <FadeWhenVisible>
         <About
           name={props.name}
