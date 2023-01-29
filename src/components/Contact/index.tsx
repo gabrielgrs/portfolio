@@ -1,38 +1,64 @@
+import axios from 'axios'
 import { useRouter } from 'next/router'
-import { useMemo } from 'react'
+import { useForm } from 'react-hook-form'
 import { Label, Button, Input, Textarea } from '../../components'
 import SectionContent from '../shared/SectionContent'
 import SectionHeader from '../shared/SectionHeader'
 import * as S from './styles'
 
-const Contact = () => {
-  const a = useRouter()
+const defaultValues = { name: '', from: '', message: '' }
 
-  const locationOrigin = useMemo(() => {
-    if (typeof window === 'undefined') return ''
-    return window.location.origin
-  }, [])
+const Contact = () => {
+  const { push } = useRouter()
+  const { handleSubmit, register, formState } = useForm({
+    defaultValues,
+  })
+
+  const onSubmit = async (formValues: typeof defaultValues) => {
+    try {
+      await axios.post('/api/send', formValues)
+      push('/thanks')
+    } catch (error) {}
+  }
 
   return (
     <S.Contact id="contact">
-      <form action={`https://formsubmit.co/${process.env.FORM_SUBMIT_ID}`} method="POST">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <SectionContent>
           <SectionHeader>Contact</SectionHeader>
           <Label>Name</Label>
-          <Input name="name" type="text" placeholder="Type your name" required />
+          <Input
+            {...register('name', { required: true })}
+            type="text"
+            placeholder="Type your name"
+            required
+          />
           <br />
           <br />
           <Label>Email</Label>
-          <Input name="email" type="email" placeholder="Type your email" required />
+          <Input
+            {...register('from', { required: true })}
+            type="email"
+            placeholder="Type your email"
+            required
+          />
           <br />
           <br />
           <Label>Message</Label>
-          <Textarea name="message" placeholder="Type your message" rows={5} required />
+          <Textarea
+            {...register('message', { required: true })}
+            placeholder="Type your message"
+            rows={5}
+          />
           <br />
           <br />
           <br />
-          <input type="hidden" name="_next" value={`${locationOrigin}/thanks`} />
-          <Button type="submit">Send Message</Button>
+          <Button
+            type="submit"
+            disabled={!formState.isDirty || !formState.isValid || formState.isSubmitting}
+          >
+            {formState.isSubmitting ? 'Sending...' : 'Send Message'}
+          </Button>
         </SectionContent>
       </form>
     </S.Contact>

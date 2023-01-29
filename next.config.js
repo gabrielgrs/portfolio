@@ -5,8 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
+    RESEND_KEY: process.env.RESEND_KEY,
     GITHUB_USER: process.env.GITHUB_USER,
-    FORM_SUBMIT_ID: process.env.FORM_SUBMIT_ID,
   },
 }
 

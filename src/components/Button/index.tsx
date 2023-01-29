@@ -12,6 +12,11 @@ const Button = styled.button`
     font-size: 1em;
     position: relative;
 
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
     &:active {
       transition: 100ms ease;
       transform: translateY(-2px);
